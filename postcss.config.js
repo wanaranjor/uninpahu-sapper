@@ -11,9 +11,14 @@ const presetEnv = require('postcss-preset-env')({
   },
 });
 
+const purgecss = require("@fullhuman/postcss-purgecss")({
+  content: ["./src/**/*.svelte", "./src/**/*.html"],
+  defaultExtractor: (content) => content.match(/[A-Za-z0-9-_:/]+/g) || [],
+});
+
 const plugins =
   process.env.NODE_ENV === 'production'
-    ? [postcssImport, tailwind, presetEnv, cssnano]
+    ? [postcssImport, tailwind, presetEnv, purgecss, cssnano]
     : [postcssImport, tailwind, presetEnv];
 
 module.exports = { plugins };
