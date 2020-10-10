@@ -1,4 +1,4 @@
-/* global.pcss */
+/* purgecss start ignore */
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
@@ -586,12 +586,6 @@ img,
 video {
   max-width: 100%;
   height: auto;
-}
-
-body {
-  --bg-opacity: 1;
-  background-color: #e5edff;
-  background-color: rgba(229, 237, 255, var(--bg-opacity));
 }
 
 .container {
@@ -1850,6 +1844,8 @@ body {
 .prose-2xl > :last-child {
   margin-bottom: 0;
 }
+
+/* purgecss end ignore */
 
 .space-y-0 > :not(template) ~ :not(template) {
   --space-y-reverse: 0;
